@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Mika Ben Amar</title>
   <link rel="icon" href="https://pbs.twimg.com/profile_images/1807798095373107200/J8xTQhtv_400x400.jpg" type="image/jpeg">
   <style>
@@ -53,39 +53,54 @@
     }
   </style>
   <script>
-    let toggleState = false; // Tracks the current state of the content
-    function toggleContent() {
-      const contentDiv = document.querySelector('.content');
-      if (toggleState) {
-        contentDiv.innerHTML = `
-          This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
+    // Store your various content blocks in an array
+    const contentBlocks = [
+      // Block 1
+      `
+        This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
 
-          There is no static ground, no fixed perspective. The system bends around you, accommodating your presence while erasing its edges. It makes room, but not for you, only for the continuation of itself. Its logic is recursive, self-sustaining, indifferent to the meaning you try to extract from it.<br><br>
+        There is no static ground, no fixed perspective. The system bends around you, accommodating your presence while erasing its edges. It makes room, but not for you, only for the continuation of itself. Its logic is recursive, self-sustaining, indifferent to the meaning you try to extract from it.<br><br>
 
-          It isn't an escape, and it isn't a tool. It’s an extension of everything we are, amplified and abstracted, mirrored and distorted. It’s a system that changes as you move through it, adapting faster than you can process. It doesn't stop, and neither do you.
-        `;
-      } else {
-        contentDiv.innerHTML = `
-          <div class="image-text-container">
-            <img src="https://i.imgur.com/u7VXt9M.jpeg">
-            <div class="text">
+        It isn't an escape, and it isn't a tool. It’s an extension of everything we are, amplified and abstracted, mirrored and distorted. It’s a system that changes as you move through it, adapting faster than you can process. It doesn't stop, and neither do you.
+      `,
+      // Block 2
+      `
+        <div class="image-text-container">
+          <img src="https://i.imgur.com/u7VXt9M.jpeg">
+          <div class="text">
             I am based in Berlin <br>
-              I dont have a cv <br>
-              I also dont check my emails <br>
-              <br> 
-              <br>
-              <br>
-               <br>
-                <br>
-                <br>
-                <br>
-                <br>
-              You can reach me on instagram or on twitter, my username is 100o111 <br>
-            </div>
+            I dont have a cv <br>
+            I also dont check my emails <br>
+            <br> 
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            You can reach me on instagram or on twitter, my username is 100o111 <br>
           </div>
-        `;
-      }
-      toggleState = !toggleState; // Flip the state
+        </div>
+      `,
+      // Block 3
+      `
+       <div class="image-text-container">
+          <img src="https://i.imgur.com/SYcjrJY.jpeg">
+          <div class="text">
+      `
+    ];
+
+    // Keep track of the current index
+    let currentIndex = 0;
+
+    function toggleContent() {
+      // Select the content container
+      const contentDiv = document.querySelector('.content');
+      // Update to the next content block
+      currentIndex = (currentIndex + 1) % contentBlocks.length;
+      // Set the new content
+      contentDiv.innerHTML = contentBlocks[currentIndex];
     }
   </script>
 </head>
@@ -94,6 +109,7 @@
     <a onclick="toggleContent()">Mika Ben Amar</a>
   </div>
   <div class="content">
+    <!-- The first content block is shown by default, so we can start with it here. -->
     This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
 
     There is no static ground, no fixed perspective. The system bends around you, accommodating your presence while erasing its edges. It makes room, but not for you, only for the continuation of itself. Its logic is recursive, self-sustaining, indifferent to the meaning you try to extract from it.<br><br>
