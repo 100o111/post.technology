@@ -19,23 +19,19 @@
       height: 100vh; /* Full viewport height */
       justify-content: space-between; /* Space the header and content */
     }
-
     .header a {
       text-decoration: none;
       color: black;
       transition: color 0.2s ease;
       cursor: pointer;
     }
-
     .header a:hover {
       color: lightgrey; /* Light grey on hover */
     }
-
     .header {
       padding: 20px; /* Padding for spacing at the top */
       text-align: left;
     }
-
     .content {
       padding-left: 20px; /* Aligns text to the left edge */
       padding-right: 40px; /* Adds some space to the right */
@@ -43,31 +39,17 @@
       margin-bottom: 20px; /* Adjusts the bottom spacing */
       text-align: left;
     }
-
     .image-text-container {
       display: flex;
       align-items: flex-start;
       gap: 20px;
     }
-
     .image-text-container img {
       max-width: 200px; /* Adjust to make the image smaller */
       height: auto;
     }
-
     .image-text-container .text {
       max-width: 500px; /* Ensures text doesn't stretch too wide */
-    }
-
-    /* Responsive: stack image & text vertically on narrow screens */
-    @media (max-width: 600px) {
-      .image-text-container {
-        flex-direction: column;
-      }
-      .image-text-container img,
-      .image-text-container .text {
-        max-width: 100%;
-      }
     }
   </style>
   <script>
@@ -84,7 +66,7 @@
       // Block 2
       `
         <div class="image-text-container">
-          <img src="https://i.imgur.com/u7VXt9M.jpeg" alt="Mika Ben Amar example">
+          <img src="https://i.imgur.com/u7VXt9M.jpeg" alt="Mika Ben Amar">
           <div class="text">
             I am based in Berlin <br>
             I dont have a cv <br>
@@ -104,9 +86,9 @@
       // Block 3
       `
         <div class="image-text-container">
-          <img src="https://i.imgur.com/SYcjrJY.jpeg" alt="Additional content">
+          <img src="https://i.imgur.com/SYcjrJY.jpeg" alt="Example Third Block">
           <div class="text">
-            
+
           </div>
         </div>
       `
