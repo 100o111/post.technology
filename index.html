@@ -19,6 +19,15 @@
       height: 100vh; /* Full viewport height */
       justify-content: space-between; /* Space the header and content */
     }
+    .header a {
+      text-decoration: none;
+      color: black;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+    .header a:hover {
+      color: lightgrey; /* Light grey on hover */
+    }
     .header {
       padding: 20px; /* Padding for spacing at the top */
       text-align: left;
@@ -30,10 +39,60 @@
       margin-bottom: 20px; /* Adjusts the bottom spacing */
       text-align: left;
     }
+    .image-text-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+    .image-text-container img {
+      max-width: 200px; /* Adjust to make the image smaller */
+      height: auto;
+    }
+    .image-text-container .text {
+      max-width: 500px; /* Ensures text doesn't stretch too wide */
+    }
   </style>
+  <script>
+    let toggleState = false; // Tracks the current state of the content
+    function toggleContent() {
+      const contentDiv = document.querySelector('.content');
+      if (toggleState) {
+        contentDiv.innerHTML = `
+          This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
+
+          There is no static ground, no fixed perspective. The system bends around you, accommodating your presence while erasing its edges. It makes room, but not for you, only for the continuation of itself. Its logic is recursive, self-sustaining, indifferent to the meaning you try to extract from it.<br><br>
+
+          It isn't an escape, and it isn't a tool. It’s an extension of everything we are, amplified and abstracted, mirrored and distorted. It’s a system that changes as you move through it, adapting faster than you can process. It doesn't stop, and neither do you.
+        `;
+      } else {
+        contentDiv.innerHTML = `
+          <div class="image-text-container">
+            <img src="https://media.discordapp.net/attachments/1268622667406119025/1333193732517789737/2025-01-26_22.51.48.jpg?ex=679800eb&is=6796af6b&hm=df3a2277f8c07a7769bee900c46c400e6c079864791e64a4dd1e6865e4588f23&=&format=webp&width=1276&height=1276" alt="Image">
+            <div class="text">
+            I am based in Berlin <br>
+              I dont have a cv <br>
+              I also dont check my emails <br>
+              <br> 
+              <br>
+              <br>
+               <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              You can reach me on instagram or on twitter, my username is 100o111 <br>
+            </div>
+          </div>
+        `;
+      }
+      toggleState = !toggleState; // Flip the state
+    }
+  </script>
 </head>
 <body>
-  <div class="header">Mika Ben Amar</div>
+  <div class="header">
+    <a onclick="toggleContent()">Mika Ben Amar</a>
+  </div>
   <div class="content">
     This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
 
