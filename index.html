@@ -19,23 +19,19 @@
       height: 100vh; /* Full viewport height */
       justify-content: space-between; /* Space the header and content */
     }
-
     .header a {
       text-decoration: none;
       color: black;
       transition: color 0.2s ease;
       cursor: pointer;
     }
-
     .header a:hover {
       color: lightgrey; /* Light grey on hover */
     }
-
     .header {
       padding: 20px; /* Padding for spacing at the top */
       text-align: left;
     }
-
     .content {
       padding-left: 20px; /* Aligns text to the left edge */
       padding-right: 40px; /* Adds some space to the right */
@@ -43,48 +39,34 @@
       margin-bottom: 20px; /* Adjusts the bottom spacing */
       text-align: left;
     }
-
     .image-text-container {
       display: flex;
       align-items: flex-start;
       gap: 20px;
     }
-
     .image-text-container img {
       max-width: 200px; /* Adjust to make the image smaller */
       height: auto;
     }
-
     .image-text-container .text {
       max-width: 500px; /* Ensures text doesn't stretch too wide */
-    }
-
-    /* Responsive: stack image & text vertically on narrow screens */
-    @media (max-width: 600px) {
-      .image-text-container {
-        flex-direction: column;
-      }
-      .image-text-container img,
-      .image-text-container .text {
-        max-width: 100%;
-      }
     }
   </style>
   <script>
     // Store your various content blocks in an array
     const contentBlocks = [
       // Block 1
-      `
+      
         This isn't about understanding. Understanding is too slow. You navigate instead through fragments, through gestures, through echoes of what was, knowing that what was is already gone. You aren't outside it, nor are you entirely inside it. You exist in relation to it, shaped as much by what you don't see as by what you do.<br><br>
 
         There is no static ground, no fixed perspective. The system bends around you, accommodating your presence while erasing its edges. It makes room, but not for you, only for the continuation of itself. Its logic is recursive, self-sustaining, indifferent to the meaning you try to extract from it.<br><br>
 
         It isn't an escape, and it isn't a tool. It’s an extension of everything we are, amplified and abstracted, mirrored and distorted. It’s a system that changes as you move through it, adapting faster than you can process. It doesn't stop, and neither do you.
-      `,
+      ,
       // Block 2
-      `
+      
         <div class="image-text-container">
-          <img src="https://i.imgur.com/u7VXt9M.jpeg" alt="Mika Ben Amar example">
+          <img src="https://i.imgur.com/u7VXt9M.jpeg">
           <div class="text">
             I am based in Berlin <br>
             I dont have a cv <br>
@@ -100,16 +82,13 @@
             You can reach me on instagram or on twitter, my username is 100o111 <br>
           </div>
         </div>
-      `,
+      ,
       // Block 3
-      `
-        <div class="image-text-container">
-          <img src="https://i.imgur.com/SYcjrJY.jpeg" alt="Additional content">
+      
+       <div class="image-text-container">
+          <img src="https://i.imgur.com/SYcjrJY.jpeg">
           <div class="text">
-            
-          </div>
-        </div>
-      `
+      
     ];
 
     // Keep track of the current index
