@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mika Ben Amar</title>
+  <link rel="icon" href="https://pbs.twimg.com/profile_images/1807798095373107200/J8xTQhtv_400x400.jpg" type="image/jpeg">
+  <style>
+    @font-face {
+      font-family: 'SF Pro Display';
+      font-style: normal;
+      font-weight: 500;
+      src: url('https://fonts.cdnfonts.com/s/63688/SFPRODISPLAYMEDIUM.woff') format('woff');
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'SF Pro Display', Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.4;
+      color: black;
+      background: white;
+      height: 100vh;
+    }
+
+    .content, .footer-links {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .content {
+        display: block;
+        padding: 20px;
+        max-width: 500px;
+      }
+
+      .footer-links {
+        display: flex;
+        padding: 10px 20px;
+        font-size: 12px;
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <p>
+      <span style="color: black;">Mika Ben Amar</span> is a Berlin-based artist whose work navigates the internet as both a medium and a landscape. Blending digital and physical forms, she explores the aesthetics, behaviors, and infrastructures of contemporary online culture. Rooted in a state of being chronically online, her practice examines how we consume, process, and shift attention within systems designed to capture it.
+    </p>
+    <p>
+      You can find her on <a href="https://www.instagram.com/100o111/" target="_blank">instagram</a> and on <a href="https://x.com/100o111" target="_blank">twitter</a><br>
+      Or reach her via email <a href="mailto:i@cant.download">i@cant.download</a>
+    </p>
+  </div>
+  <div class="footer-links">
+    <a href="https://5g.technology" target="_blank">5g.technology</a>
+    <a href="https://internetwork.ing" target="_blank">internetwork.ing</a>
+    <a href="https://cant.download" target="_blank">cant.download</a>
+    (*＾▽＾)／
+  </div>
+  <script>
+    const bioText = `Mika Ben Amar is a Berlin based artist whose work navigates the internet as both a medium and a landscape Blending digital and physical forms she explores the aesthetics behaviors and infrastructures of contemporary online culture Rooted in a state of being chronically online her practice examines how we consume process and shift attention within systems designed to capture it`;
+
+    const words = bioText.replace('Mika Ben Amar', 'MikaBenAmar').split(/\s+/).map(w => w === 'MikaBenAmar' ? 'Mika Ben Amar' : w);
+    let index = 0;
+
+    function step() {
+      const path = '/my_email_is___i[at]cant.download/' + encodeURIComponent(words[index].split(' ').join('_'));
+      history.replaceState(null, '', path);
+      index = (index + 1) % words.length;
+    }
+
+    if (window.matchMedia('(min-width: 769px)').matches) {
+      setInterval(step, 210);
+    }
+  </script>
+</body>
+</html>
