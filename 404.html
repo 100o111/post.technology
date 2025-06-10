@@ -74,7 +74,7 @@
     let index = 0;
 
     function step() {
-      const path = '/my_email_is___i[at]cant.download/' + encodeURIComponent(words[index].split(' ').join('_'));
+      const path = '/my_email_is_i[at]cant.download/' + encodeURIComponent(words[index].split(' ').join('_'));
       history.replaceState(null, '', path);
       index = (index + 1) % words.length;
     }
