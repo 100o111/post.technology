@@ -67,18 +67,33 @@
     <a href="https://cant.download" target="_blank">cant.download</a>
     (*＾▽＾)／
   </div>
+
   <script>
+    // Full bio text to cycle through
     const bioText = `Mika Ben Amar is a Berlin based artist whose work navigates the internet as both a medium and a landscape Blending digital and physical forms she explores the aesthetics behaviors and infrastructures of contemporary online culture Rooted in a state of being chronically online her practice examines how we consume process and shift attention within systems designed to capture it`;
 
-    const words = bioText.replace('Mika Ben Amar', 'MikaBenAmar').split(/\s+/).map(w => w === 'MikaBenAmar' ? 'Mika Ben Amar' : w);
+    // Split into words but keep "Mika Ben Amar" intact
+    const words = bioText
+      .replace('Mika Ben Amar', 'MikaBenAmar')
+      .split(/\s+/)
+      .map(w => w === 'MikaBenAmar' ? 'Mika Ben Amar' : w);
+
     let index = 0;
 
     function step() {
-      const path = '/my_email_is_i[at]cant.download/' + encodeURIComponent(words[index].split(' ').join('_'));
-      history.replaceState(null, '', path);
+      // Build a raw path including a literal "@"
+      const rawPath = '/my_email_is_i@cant.download/'
+                    + words[index].split(' ').join('_');
+
+      // encodeURI escapes spaces, non-ASCII, etc. but leaves "@" alone
+      const safePath = encodeURI(rawPath);
+
+      history.replaceState(null, '', safePath);
+
       index = (index + 1) % words.length;
     }
 
+    // Only animate on wider (desktop) viewports
     if (window.matchMedia('(min-width: 769px)').matches) {
       setInterval(step, 210);
     }
